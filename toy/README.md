@@ -7,6 +7,7 @@
 - Python latest version (3.11)
 - Win系统 (Linux系统未测试)
 - [Quicker](https://getquicker.net/)
+- 调整[杀毒软件](#my-time-aware)
 
 ## Usage and Guide
 
@@ -27,6 +28,10 @@
 简单解释关于程序, 以及记录它们的理念与想法.
 
 ### My Time Aware
+
+#### 警告
+
+Bitdefender会误报, 会触发"Advanced Threat Defense". 请自行调整或者触发后restore受影响的文件 以便加入白名单
 
 #### 简介与理念
 
