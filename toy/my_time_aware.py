@@ -46,7 +46,8 @@ def calculate_and_show():
     if awake_duration < datetime.timedelta(0):
         awake_duration += datetime.timedelta(days=1)
     # 显示
-    print('已经清醒    {}小时{}分钟'.format(awake_duration.seconds // 3600, awake_duration.seconds % 3600 // 60))
+    print('起床时间    {:02d}:{:02d}'.format(awake_time.hour, awake_time.minute))
+    print('已经清醒    {:02d}小时{}分钟'.format(awake_duration.seconds // 3600, awake_duration.seconds % 3600 // 60))
 
     # 计算暖床. 24小时减去暖床时间减去睡眠时长减去清醒时长
     bed_time = datetime.timedelta(days=1) - bed_to_sleep - sleep_duration - awake_duration
