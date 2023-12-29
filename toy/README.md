@@ -12,6 +12,16 @@
 
 使用Quicker作为菜单和UI. 主要途径是PowerShell脚本来调用Python程序/脚本, 一般就仅此而已.
 
+### 关于日志文件与隐私
+
+这是一个简明的项目, 可能只是有了想法就随手写的, 所以没有考虑比如日志和隐私等具体实现, 也并没有对每一个程序检查他们的依赖库和初始文件等配置.
+
+配置gitignore是个好主意, 但它主要的功能是"忽略"而不是"未来不再更新", 所以我并没有使用它.
+
+目前的对策是, 我简单的复制这个文件夹到其他位置, 然后实际使用 that's all. 比如第一个这个`my_time_aware`会读取同文件夹里的`awake_time.txt`, 如果直接用, 那么基本每次git pull都会更新它了which is ng.
+
+这个项目的目的是分享, 所以我会尝试尽量完善它, 使得它可以更加方便的使用.
+
 ## Programs
 
 简单解释关于程序, 以及记录它们的理念与想法.
@@ -49,3 +59,7 @@
 ## Reminders
 
 py文件的命名规则: 一般使用纯小写, 但是如果是多个单词, 则使用下划线分割. 比如`my_clock.py`
+
+## License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
