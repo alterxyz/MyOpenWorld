@@ -22,7 +22,8 @@ It is mine, but it is open so it could be yours as well.
 
 ## 目录
 
-[开始这个project之初的随笔与简介](./assets/initial%2020231228.md)
+- [toy](./toy/README.md) 一些简单的, 自己生活常用的*小*工具.
+- [随笔与简介](./assets/initial%2020231228.md) 写于开始这个project之初
 
 ## TODO
 
