@@ -4,9 +4,6 @@ description: Welcome to this web! It is just alpha version.
 
 # Build settings
 theme: jekyll-theme-minimal
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
 
 # GitHub Pages settings
 remote_theme: "mmistakes/minimal-mistakes"
