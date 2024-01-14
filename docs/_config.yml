@@ -5,8 +5,6 @@ description: Welcome to this web! It is just alpha version.
 # Build settings
 theme: jekyll-theme-minimal
 
-# GitHub Pages settings
-remote_theme: "mmistakes/minimal-mistakes"
 # Common info
 author: AlterXYZ
 email: github.1vwpk@aleeas.com
