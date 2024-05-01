@@ -1,5 +1,8 @@
 # toy
 
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 一些简单的小玩具. 自己生活常用的内容.
 
 ## System Requirements
@@ -69,12 +72,29 @@ Bitdefender会误报, 会触发"Advanced Threat Defense". 请自行调整或者�
 
 消磨时间时喜欢打星际2, 但是有些地图和指挥官我不喜欢, 所以就花了几分钟写了这个简单的脚本.
 
+### open_clipboard
+
+学习并实践下[Docstring](https://google.github.io/styleguide/pyguide.html#s3.8-comments-and-docstrings) with sphinx, 初步实践pylint, 以及一些简单的操作.
+读取剪贴板的文件或者文件夹路径, 然后通过资源管理器打开目标位置.
+
+### base64_checker
+
+检查base64编码的字符串是否和原始图片一致.
+支持命令行参数, 也支持交互式输入.
+
 ---
 
-## Reminders
+## Reminders (个人的学习笔记)
 
 py文件的命名规则: 一般使用纯小写, 但是如果是多个单词, 则使用下划线分割. 比如`my_clock.py`
 
+### sphinx
+
+- 安装: `pip install sphinx`, 然后`cd toy`
+- 使用: `python -m sphinx.cmd.quickstart docs`来初始化一个文档目录, 生成的sphinx在`docs`目录下
+- `python -m sphinx.ext.apidoc -f -o docs/sourc .` 来生成API文档
+- 生成文档: `python -m sphinx -b html docs mydocs` 生成html文档, 也可以使用`make html`来生成(Linux)
+
 ## License
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+This project is licensed under the MIT License.
