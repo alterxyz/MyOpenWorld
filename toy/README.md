@@ -1,26 +1,26 @@
-# toy
+# Tools
 
 [![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-一些简单的小玩具. 自己生活常用的内容.
+Some simple tools. Contents that I use in my daily life.
 
-## System Requirements
+## General System Requirements
 
-- Python latest version (3.11)
-- Win系统 (Linux系统未测试)
+- Python 3.x
+- Windows system (Some May be tested on Linux/WSL/Ubuntu)
 - [Quicker](https://getquicker.net/)
-- 调整[杀毒软件](#my-time-aware)
+- Adjust Antivirus Software
 
-## Usage and Guide
+## General Usage and Guide
 
-使用Quicker作为菜单和UI. 主要途径是PowerShell脚本来调用Python程序/脚本, 一般就仅此而已.
+Most tools are used by command line like PowerShell or Quicker(to shell).
 
-### 关于日志文件与隐私
+### About Log Files and Privacy
 
-这是一个简明的项目, 可能只是有了想法就随手写的, 所以没有考虑比如日志和隐私等具体实现, 也并没有对每一个程序检查他们的依赖库和初始文件等配置.
+This is a concise project, maybe just written with an idea in hand, so I didn't consider specific implementations such as logs and privacy, nor did I check the dependencies and initial files of each program.
 
-这个项目的目的是分享, 所以我会尝试尽量完善它, 使得它可以更加方便的使用.
+The purpose of this project is to share, so I will try to improve it as much as possible to make it more convenient to use.
 
 Feel free to make a pull request or open an issue!
 
@@ -28,86 +28,85 @@ Feel free to make a pull request or open an issue!
 
 ## Programs
 
-简单解释关于程序, 以及记录它们的理念与想法.
+Simple explanations about programs, and record their concepts and ideas.
 
 ### Record Rename By Time
 
-获取音频文件的创建时间, 然后重命名文件. 一般用于录音文件, export example: `2024-05-27T23_19_49.m4a`.
+#### Overview
 
-例如录音笔录音文件, 或者来自Just Press Record之类的录音软件. 会妥善地自动识别处理重复的录音: 跳过时间和内容完全相同的音频文件, 如果内容不同则会添加后缀并继续执行.
+`RecordRenameByTime` is a Python tool designed to automatically rename audio files based on their creation timestamps. This utility is especially useful for managing voice recordings, audio files, and speech data before processing with speech-to-text (STT) or TTS systems. It ensures that your files are systematically organized by their timestamps, making them easier to retrieve and manage.
 
-需要ffmpeg, python3.x.
+#### Features
 
-请自行安装ffmpeg并配置环境变量 - 建议使用powershell测试ffmpeg/ffprobe是否可用.
+- **Automatic Timestamp Renaming**: Renames audio files using their creation date and time as the filename, ensuring a unique and chronological order.
+- **Duplicate Handling**: Detects duplicates and handles them gracefully by either skipping or renaming with an additional suffix.
+- **Error Handling**: Identifies files with missing metadata and moves them to a separate error directory for further investigation.
+- **Supported Formats**: Works with popular audio formats such as `.m4a`, `.mp3`, `.wav`, and `.flac`.
 
-使用方法:
+#### Usage for `Record Rename By Time`
 
-1. `python3 record_rename_by_time.py` : 默认读取同文件夹里名为`source`的文件夹, 将里面所有的内容拷贝到`renamed`文件夹, 并且重命名文件.
-2. `python3 record_rename_by_time.py source_folder destination_folder` : 读取`source_folder`文件夹, 将里面所有的内容拷贝到`destination_folder`文件夹, 并且重命名文件.
-3. 没给参数, 或者也没有`source`文件夹, 会有帮助提示的.
+To use `RecordRenameByTime`, simply run the tool in your terminal. There are 2 ways to run the tool:
+
+1. `python3 record_rename_by_time.py`: This command will read the audio files from the `source` directory in the same folder and copy them to the `renamed` directory with the renamed filenames.
+2. `python3 record_rename_by_time.py <source_folder> <destination_folder>`: This command will read the audio files from the `source_folder` directory and copy them to the `destination_folder` directory with the renamed filenames.
+
+#### Requirements
+
+- Python 3.x
+- FFmpeg (for metadata extraction)
 
 ### My Time Aware
 
-#### 警告
+Originally named `作息与时差.py` (Schedule and jet lag)
 
-Bitdefender会误报, 会触发"Advanced Threat Defense". 请自行调整或者触发后restore受影响的文件 以便加入白名单
+I often experience irregular sleep patterns, which I guess is a common human imperfection.
 
-#### 简介与理念
+My approach and belief are not to force myself but to face the reality and facts squarely.
 
-原名`作息与时差.py`
+I personally find this essential and necessary. Adjustments might come naturally or could be deliberate actions later.
 
-我时常有作息不规律的情况, 或者说人总有偶尔不健康的时刻.
+Regarding health, some people are naturally night owls, while others are morning larks. However, some have irregular patterns, and others have regular patterns that are not their preference.
 
-我的习惯与认知是, 不去强迫自己, 但是让自己清楚面对真实与事实.
+Regardless, it's worth noting not just when a person wakes up too late or too early, but how long they stay awake.
 
-我个人是觉得, 这是重要且必要的. 至于调整, 或许是自然而然的事情, 也可以是之后的具体行动.
+Assuming a standard 24-hour day (with exceptions), we might further assume a life pattern of waking with the sunrise and sleeping at sunset. In a typical scenario, a "standard person" might be assumed to sleep for 8 hours, waking at 7 AM and sleeping at 11 PM.
 
-对于健康的了解, 有的人就是晚睡晚起的类型, *有的人就是早睡早起的类型. 但是, 有的人却是不规律的, 也有的人是规律的, 但是不是自己想要的.*(自动补全了个绕口令哈哈)
+This is an overly idealized assumption, but it provides a meaningful hint and reference.
 
-总之, 一个人可以很晚或者过早得起床, 但是他醒了多久, 这个是值得关注的.
+#### Usage for `My Time Aware`
 
-那么进一步, 我们假设一天是24小时(也有例外), 那么我们也可以继续假设日出而作 日落而息, 于是一般认知中的"标准人", 我们可以说他是8小时睡眠, 7点醒来, 23点睡着.
+Please configure tools like Quicker or others to call this Python program through a PowerShell script.
 
-这是一个过于理想化的假设, 但是它是有意义的, 是个很好的提示与参考.
+If you need to update the time, enter the new time and press Enter.
 
-#### 使用
+If not, simply press Enter to close and exit.
 
-请配置Quicker或者其他工具, 通过PowerShell脚本调用本Python程序.
-
-如果需要更新时间, 输入时间然后回车即可.
-
-如果不需要, 只是查看, 直接回车即可关闭与退出了.
-
-因为查看是更加频繁的, 所以更新时间的提示词我省略了.
-
----
+Since viewing is more frequent, I have omitted the prompt for updating the time.
 
 ### sc2map
 
-消磨时间时喜欢打星际2, 但是有些地图和指挥官我不喜欢, 所以就花了几分钟写了这个简单的脚本.
+I enjoy playing StarCraft II to pass the time, but I dislike certain maps and commanders, so I wrote a simple script to manage this.
 
 ### open_clipboard
 
-学习并实践下[Docstring](https://google.github.io/styleguide/pyguide.html#s3.8-comments-and-docstrings) with sphinx, 初步实践pylint, 以及一些简单的操作.
-读取剪贴板的文件或者文件夹路径, 然后通过资源管理器打开目标位置.
+I studied and practiced [Docstring](https://google.github.io/styleguide/pyguide.html#s3.8-comments-and-docstrings) with Sphinx, initially practiced with pylint, and performed some simple operations. This script reads file or folder paths from the clipboard and opens them in the file explorer.
 
 ### base64_checker
 
-检查base64编码的字符串是否和原始图片一致.
-支持命令行参数, 也支持交互式输入.
+Checks if a base64-encoded string matches the original image. Supports command-line arguments as well as interactive input.
 
 ---
 
-## Reminders (个人的学习笔记)
+## Reminders (Personal Study Notes)
 
-py文件的命名规则: 一般使用纯小写, 但是如果是多个单词, 则使用下划线分割. 比如`my_clock.py`
+File naming rules for Python scripts: generally use lowercase, but if multiple words are involved, use underscores to separate them, like `my_clock.py`.
 
 ### sphinx
 
-- 安装: `pip install sphinx`, 然后`cd toy`
-- 使用: `python -m sphinx.cmd.quickstart docs`来初始化一个文档目录, 生成的sphinx在`docs`目录下
-- `python -m sphinx.ext.apidoc -f -o docs/sourc .` 来生成API文档
-- 生成文档: `python -m sphinx -b html docs mydocs` 生成html文档, 也可以使用`make html`来生成(Linux)
+- Installation: `pip install sphinx`, then `cd toy`
+- Usage: Initialize a documentation directory with `python -m sphinx.cmd.quickstart docs`, which generates Sphinx documentation under the `docs` directory.
+- Generate API documentation with `python -m sphinx.ext.apidoc -f -o docs/source .`
+- To build the documentation: `python -m sphinx -b html docs mydocs` to generate HTML documents, or use `make html` on Linux.
 
 ## License
 
