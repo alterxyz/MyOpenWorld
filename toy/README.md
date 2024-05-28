@@ -30,6 +30,22 @@ Feel free to make a pull request or open an issue!
 
 简单解释关于程序, 以及记录它们的理念与想法.
 
+### Record Rename By Time
+
+获取音频文件的创建时间, 然后重命名文件. 一般用于录音文件, export example: `2024-05-27T23_19_49.m4a`.
+
+例如录音笔录音文件, 或者来自Just Press Record之类的录音软件. 会妥善地自动识别处理重复的录音: 跳过时间和内容完全相同的音频文件, 如果内容不同则会添加后缀并继续执行.
+
+需要ffmpeg, python3.x.
+
+请自行安装ffmpeg并配置环境变量 - 建议使用powershell测试ffmpeg/ffprobe是否可用.
+
+使用方法:
+
+1. `python3 record_rename_by_time.py` : 默认读取同文件夹里名为`source`的文件夹, 将里面所有的内容拷贝到`renamed`文件夹, 并且重命名文件.
+2. `python3 record_rename_by_time.py source_folder destination_folder` : 读取`source_folder`文件夹, 将里面所有的内容拷贝到`destination_folder`文件夹, 并且重命名文件.
+3. 没给参数, 或者也没有`source`文件夹, 会有帮助提示的.
+
 ### My Time Aware
 
 #### 警告
