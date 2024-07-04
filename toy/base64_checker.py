@@ -1,4 +1,4 @@
-'''
+"""
 一个围绕base64编码的小工具，用于检查base64和原始图片的差异
 已知base64图片可能来自于:
 1. 原始代码
@@ -10,11 +10,9 @@
 同时也支持交互式的使用.
 所以有三种使用/格式:
 base64checker.py -b base64(file address) -i image(file address)
-'''
+"""
 
 import base64
 import os
 import sys
 import argparse
-
-

@@ -1,5 +1,6 @@
 import random
 
+
 def main():
     # 定义地图词库
     map = ["虚空降临", "机会渺茫", "湮灭快车", "营救矿工", "聚铁成兵"]
@@ -8,12 +9,23 @@ def main():
     selected_map = random.choice(map)
 
     # 定义角色词库
-    player = ["泰凯斯", "炸鸡", "暗影卫队", "凯拉克斯", "阿巴斯", "诺娃", "德哈卡", "狗男女", "泰凯斯", "泽叔"]
+    player = [
+        "泰凯斯",
+        "炸鸡",
+        "暗影卫队",
+        "凯拉克斯",
+        "阿巴斯",
+        "诺娃",
+        "德哈卡",
+        "狗男女",
+        "泰凯斯",
+        "泽叔",
+    ]
 
     # 随机选择一个词
     selected_player = random.choice(player)
 
-    #定义难度词库
+    # 定义难度词库
     level = ["休闲", "普通", "困难", "残酷"]
 
     # 随机一个难度, 其中随机比例是1:3:3:1
@@ -43,5 +55,6 @@ def main():
         print("粗暴对待猴子哦")
         # https://waitbutwhy.com/2013/10/why-procrastinators-procrastinate.html
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

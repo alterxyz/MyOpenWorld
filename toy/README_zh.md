@@ -96,6 +96,10 @@ Bitdefender会误报, 会触发"Advanced Threat Defense". 请自行调整或者�
 检查base64编码的字符串是否和原始图片一致.
 支持命令行参数, 也支持交互式输入.
 
+### half photo
+
+简单地缩减一半(或更多)分辨率
+
 ---
 
 ## Reminders (个人的学习笔记)

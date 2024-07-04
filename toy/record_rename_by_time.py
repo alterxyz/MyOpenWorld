@@ -134,7 +134,9 @@ if __name__ == "__main__":
         if not os.path.exists(source_directory):
             print("Error: 'source' directory does not exist in the current directory.")
             print("Usage: python script.py <source_directory> <destination_directory>")
-            print("Or place the source files in a directory named 'source' in the current directory.")
+            print(
+                "Or place the source files in a directory named 'source' in the current directory."
+            )
             sys.exit(1)
 
     rename_and_copy_files(source_directory, destination_directory)

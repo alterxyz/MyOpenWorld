@@ -3,6 +3,7 @@ This module provides functions to open files and directories from a path stored 
 
 It uses the pyperclip module to access the clipboard and subprocess to open the file explorer.
 """
+
 import os
 import sys
 import subprocess
@@ -24,13 +25,14 @@ def open_clipboard():
     path = pyperclip.paste()  # Get the path from the clipboard
 
     if not os.path.exists(path):
-        print('Error: File or folder does not exist.')
-        if input('Do you want to create it? (y/n): ').lower() != 'y':
+        print("Error: File or folder does not exist.")
+        if input("Do you want to create it? (y/n): ").lower() != "y":
             raise PathFormatError("User chose not to create the path.")
 
         if "." in os.path.basename(path) and not confirm_is_folder():
             raise PathFormatError(
-                "Provided path is a file but a folder path was expected.")
+                "Provided path is a file but a folder path was expected."
+            )
 
         create_directory(path)
 
@@ -50,10 +52,10 @@ class PathFormatError(Exception):
 
 def confirm_is_folder():
     """Ask the user to confirm if the path is indeed a folder."""
-    response = input('Is this path a folder? (y/n): ')
-    if response.lower() == 'n':
+    response = input("Is this path a folder? (y/n): ")
+    if response.lower() == "n":
         sys.exit(1)
-    return response.lower() == 'y'
+    return response.lower() == "y"
 
 
 def create_directory(path):
@@ -61,15 +63,15 @@ def create_directory(path):
     try:
         os.makedirs(path)
     except OSError as e:
-        print(f'Error: Failed to create directory. {e}')
+        print(f"Error: Failed to create directory. {e}")
         sys.exit(1)
 
 
 def open_in_explorer(path):
     """Open the given path in the system's default file explorer."""
-    subprocess.Popen(['explorer', path])
+    subprocess.Popen(["explorer", path])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     open_clipboard()
     sys.exit(0)
